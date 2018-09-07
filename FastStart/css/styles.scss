@@ -1,0 +1,310 @@
+$mainColor: #3eb0f7;
+$mainColor2: white;
+$mainColorDark: #258dce;
+$blockColor: #f6f6f6;
+$fontColor: grey;
+$coverColor: rgba(0, 0, 0, 0.8);
+$formPlaceText: rgba(51, 51, 51, 0.5);
+$formTextBack: #fff;
+
+@mixin w-h($width, $height) {
+    width: $width;
+    height: $height;
+}
+
+@mixin col-back($color, $background) {
+    color: $color;
+    background: $background;
+}
+
+@mixin brd-rad($border-radius) {
+    border-radius: $border-radius;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Open Sans", "Serif";
+    font-weight: 300;
+    text-decoration: none;
+    color: $fontColor;
+}
+
+h1 {
+    font-size: 56px;
+    margin: 30px 0 30px 0;
+}
+
+h2 {
+    font-size: 40px;
+    font-weight: 300;
+    margin: 15px 0 15px 0;
+}
+
+h3 {
+    font-size: 18px;
+    font-weight: 500;
+    margin: 20px 0 20px 0;
+}
+
+header {
+    * {
+        color: white;
+    }
+}
+
+.logo {
+    height: 37px;
+    vertical-align: middle;
+}
+
+.wide {
+    width: 100%;
+}
+
+.back-img {
+    height: 650px;
+    background: center center / cover fixed;
+}
+
+.cover {
+    background: $coverColor;
+    @include w-h(100%, 100%);
+}
+
+.wrapper {
+    max-width: 1150px;
+    height: 100%;
+    margin: 0 auto;
+    position: relative;
+}
+
+.container {
+    .row {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .row:not(:last-of-type) {
+        margin-bottom: 10px;
+    }
+
+    .col {
+        display: flex;
+        flex-direction: column;       
+    }
+
+    .col:not(:last-of-type) {
+        margin-right: 30px;
+    }
+
+    p {
+        font-size: 17px;
+        line-height: 28px;
+    }
+}
+
+.button-section {
+    margin-top: 40px;
+}
+
+.button {
+    font-size: 17px;
+    font-weight: bold;
+    padding: 15px 35px;
+    border: 2px solid $mainColor;
+    border-radius: 100px;
+    margin-right: 10px;
+    cursor: pointer;
+    transition: 1s all;
+}
+
+.button.filled {
+    @include col-back($mainColor2, $mainColor);
+
+    &:hover {
+        @include col-back($mainColor, transparent);
+    }
+}
+
+.button.empty {
+    @include col-back($mainColor, transparent);
+
+    &:hover {
+        @include col-back($mainColor2, $mainColor);
+    }
+}
+
+.form {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+
+    *:not(:last-child) {
+        margin-bottom: 15px;
+    }
+
+    input {
+        padding: 5px 15px;
+        font-size: 18px;
+        height: 55px;
+        @include col-back($fontColor, $formTextBack);
+
+        &::placeholder {
+            @include col-back($formPlaceText, $formTextBack);
+        }
+    }
+
+    .button {
+        font-weight: 500;
+        width: 100%;
+        @include brd-rad(0);
+    }
+
+    .button.filled {
+        &:hover {
+            @include col-back($mainColor2, $mainColorDark);
+            border-color: $mainColorDark;
+        }
+    }
+
+    p {
+        font-size: 16px;
+        font-weight: 300;
+        line-height: 26px;
+    }
+
+    p.title {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    p.small {
+        font-size: 13px;
+        color: rgba(255, 255, 255, 0.8);
+    }
+}
+
+.form.email {
+    padding: 20px;
+    background: rgba(255,255,255,0.2);
+    @include brd-rad(5px);
+}
+
+.menu {
+    @include w-h(100%, 50px);
+    box-shadow: 0px 0px 5px 0px $fontColor;
+
+    .menu-logo a {
+        line-height: 50px;
+    }
+
+    .menu-links {
+        a {
+            color: $fontColor;
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 50px;
+            margin: 0 15px 0 15px;
+            transition: 500ms all;
+
+            &:hover {
+                color: $mainColor;
+            }
+        }
+    }
+}
+
+.block {
+    padding: 80px 0 70px 0;
+}
+
+#about {
+    .col {
+        width: 50%;
+    }
+
+    img {
+        max-width: 100%;
+        margin-top: 20px;
+    }
+}
+
+#feature {
+    background: $blockColor;
+
+    .title {
+        margin: 0 auto;
+        max-width: 800px;
+        text-align: center;
+        padding-bottom: 70px;
+
+        p {
+            font-size: 18px;
+        }
+    }
+
+    img {
+        max-width: 100%;
+    }
+
+    .icon svg {
+        @include w-h(60px, 60px);
+        transform: scale(0.8, 0.7);
+        margin: 7px 15px 0 15px;
+        fill: $fontColor;
+    }
+
+    .text {
+        p {
+            line-height: 24px;
+            padding-bottom: 10px;
+        }
+    }
+}
+
+#feature-2 {
+    .col {
+        width: 50%;
+    }
+
+    img {
+        max-width: 100%;
+        margin-top: 20px;
+    }
+}
+
+#howto {
+    * {
+        color: white;
+    }
+
+    *:not(:last-child) {
+        margin-bottom: 15px;
+    }
+
+    .container {
+        .col {
+            width: 60%;
+            text-align: center;
+            margin: 0 auto;
+        }
+    }
+
+    .button {
+        font-weight: 500;
+        width: 280px;
+        @include brd-rad(5px);
+        margin: 0 auto;
+    }
+
+    .button.filled {
+        &:hover {
+            @include col-back($mainColor2, $mainColorDark);
+            border-color: $mainColorDark;
+        }
+    }
+}
+

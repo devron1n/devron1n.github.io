@@ -1,0 +1,150 @@
+body {
+  background-color: rgba(0, 0, 0, 0.95);
+}
+
+h1 {
+  font-size: 12vw;
+  line-height: 12vw;
+  letter-spacing: -0.04em;
+}
+
+h2 {
+  font-size: 7vw;
+  line-height: 12vw;
+  letter-spacing: -0.04em;
+}
+
+h6 {
+  margin-top: 10px;
+  font-size: 1.5vw;
+}
+
+p {
+  font-size: 1.5vw;
+}
+
+hr {
+  margin: 60px 0 30px 0;
+}
+
+#side-menu {
+  width: 300px;
+  height: 100%;
+  background-color: grey;
+  position: absolute;
+  right: -300px;
+  display: none;
+}
+
+#side-menu .col {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: relative;
+  margin-top: 110px;
+}
+
+#side-menu a {
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.8);
+  -webkit-transition: 500ms all;
+  transition: 500ms all;
+}
+
+#side-menu a:hover {
+  color: white;
+}
+
+#side-menu h1 {
+  font-size: 50px;
+  margin-bottom: 50px;
+  line-height: initial;
+}
+
+#side-menu h3 {
+  font-size: 46px;
+  font-weight: 400;
+  margin-bottom: 20px;
+  margin-left: 20px;
+}
+
+.wrapper {
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.wrapper a {
+  text-decoration: none;
+}
+
+#menu {
+  padding: 0;
+}
+
+#menu .burger {
+  top: 0;
+  bottom: 0;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: auto 5px;
+  position: relative;
+  cursor: pointer;
+  z-index: 999;
+}
+
+#menu .burger .burger-line--top {
+  width: 20px;
+  height: 2px;
+  background: white;
+  -webkit-transition: 300ms all;
+  transition: 300ms all;
+  position: relative;
+}
+
+#menu .burger .burger-line--center {
+  width: 20px;
+  height: 2px;
+  background: white;
+  margin: 5px 0;
+  -webkit-transition: 300ms all;
+  transition: 300ms all;
+}
+
+#menu .burger .burger-line--bottom {
+  width: 20px;
+  height: 2px;
+  background: white;
+  -webkit-transition: 300ms all;
+  transition: 300ms all;
+  position: relative;
+}
+
+#main .text-block {
+  margin: 50px 0 0 0;
+}
+
+#projects .proj-item {
+  padding: 20px;
+  cursor: pointer;
+  -webkit-transition: 2s all;
+  transition: 2s all;
+}
+
+#projects .proj-item:hover {
+  background-color: black;
+}
+
+#projects .proj-item .img-block img {
+  background-color: grey;
+}
+
+#projects svg {
+  width: 40px;
+  height: 40px;
+}
+/*# sourceMappingURL=styles.css.map */
