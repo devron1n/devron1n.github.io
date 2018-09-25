@@ -263,7 +263,13 @@ header * {
 }
 
 .menu .menu-logo a {
-  line-height: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100%;
 }
 
 .menu .menu-links a {
@@ -278,6 +284,51 @@ header * {
 
 .menu .menu-links a:hover {
   color: #3eb0f7;
+}
+
+.hovered {
+  color: #3eb0f7 !important;
+}
+
+.button-toTop {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  margin: 0 20px 20px 0;
+  cursor: pointer;
+  z-index: 998;
+  display: none;
+}
+
+.button-toTop svg {
+  width: 40px;
+  height: 40px;
+  opacity: 0.8;
+}
+
+.button-toTop svg * {
+  -webkit-transition: 500ms all;
+  transition: 500ms all;
+}
+
+.button-toTop svg .border {
+  fill: #3eb0f7;
+}
+
+.button-toTop svg .bg {
+  fill: transparent;
+}
+
+.button-toTop svg .arrow {
+  fill: #3eb0f7;
+}
+
+.button-toTop svg:hover .bg {
+  fill: #3eb0f7;
+}
+
+.button-toTop svg:hover .arrow {
+  fill: white;
 }
 
 .block {
@@ -297,6 +348,22 @@ header * {
 
 .block-title .title-line hr {
   border: 1px solid #3eb0f7;
+}
+
+.slider {
+  overflow: hidden;
+}
+
+.slider .slider-box {
+  width: 300%;
+  position: relative;
+  left: 0;
+  -webkit-transition: 1s all;
+  transition: 1s all;
+}
+
+.slider .slider-box .slide {
+  width: 100%;
 }
 
 .slider .bullet-section {
@@ -319,7 +386,7 @@ header * {
   background: #3eb0f7;
 }
 
-.slider .bullet-section .active {
+.slider .bullet-section .selected {
   background: #3eb0f7;
 }
 
@@ -497,6 +564,7 @@ header * {
 
 #reviews .container .col {
   text-align: center;
+  margin-right: 0;
 }
 
 #reviews .container .col * {

@@ -233,7 +233,9 @@ header {
     z-index: 999;
 
     .menu-logo a {
-        line-height: 50px;
+        display: flex;
+        align-items: center;
+        height: 100%;
     }
 
     .menu-links {
@@ -247,6 +249,52 @@ header {
 
             &:hover {
                 color: $mainColor;
+            }
+        }
+    }
+}
+
+.hovered {
+    color: $mainColor !important;
+}
+
+.button-toTop {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    margin: 0 20px 20px 0;
+    cursor: pointer;
+    z-index: 998;
+    display: none;
+
+    svg {
+        @include setWidthAndHeight(40px, 40px);
+        opacity: 0.8;   
+        
+        * {
+            transition: 500ms all;
+        }
+
+        .border {
+            fill: $mainColor;
+        }
+        
+        .bg {
+            fill: transparent;
+        }
+
+        .arrow {
+            fill: $mainColor;
+        }
+        
+
+        &:hover {
+            .bg {
+                fill: $mainColor;
+            }
+
+            .arrow {
+                fill: $mainColor2;
             }
         }
     }
@@ -273,6 +321,19 @@ header {
 }
 
 .slider {
+    overflow: hidden;
+
+    .slider-box {
+        width: 300%;
+        position: relative;
+        left: 0;
+        transition: 1s all;
+
+        .slide {
+            width: 100%;
+        }
+    }
+
     .bullet-section {
         display: flex;
 
@@ -289,7 +350,7 @@ header {
             }
         }
 
-        .active {
+        .selected {
             background: $mainColor;
         }
     }
@@ -391,10 +452,6 @@ header {
         font-size: 21px;
     }
 
-    .block-title {
-        
-    }
-
     .container {
         .col {
             border: 1px solid $formPlaceholderText;
@@ -484,6 +541,7 @@ header {
 
         .col {
             text-align: center;
+            margin-right: 0;
 
             * {
                 margin-bottom: 15px;
